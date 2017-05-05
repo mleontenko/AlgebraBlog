@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="hr">
-    <head>
-		<meta charset="utf-8">
-		<title>AlgebraBlog</title>
-    </head>
-    <body>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
 		<form method="post" action="">
 			{{ csrf_field() }}
 			Naslov:<br />
@@ -17,5 +16,7 @@
 			
 			<input type="submit" value="Spremi" />
 		</form>
-    </body>
-</html>
+		</div>
+    </div>
+</div>
+@endsection

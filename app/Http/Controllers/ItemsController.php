@@ -108,6 +108,7 @@ class ItemsController extends Controller
      */
     public function destroy($id)
     {
-        //
+		DB::table('items')->where([['user_id', '=', auth()->id()],['id', '=', $id]])->delete();
+		return redirect('/items');
     }
 }

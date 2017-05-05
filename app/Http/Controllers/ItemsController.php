@@ -8,6 +8,16 @@ use App\Item;
 
 class ItemsController extends Controller
 {
+	/**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+	public function __construct()
+    {
+		//autentifikacija da neprijavljeni korisnik ne može dodati nove postove
+        $this->middleware('auth')->except(['index', 'show']);
+    }
     /**
      * Display a listing of the resource.
      *
